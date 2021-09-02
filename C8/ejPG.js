@@ -155,4 +155,30 @@ if (!hecho){
     console.log("gracias")
 }
 
+console.log("_______________________________________________")
+
+let edad1 = 35; //(el número es a modo de ejemplo, podes cambiarlo o crear otras para tener varias pruebas)
+ 
+if (edad1 <= 0) { //verificamos que la edad no sea menor o igual a 0
+  console.log("Error, edad inválida. Por favor ingrese un número válido."); //si es menor o igual a 0 descartamos
+} else if (edad1 < 18) { //luego verificamos que no sea menor a 18
+  console.log("No podes pasar!!");
+} else { //si no se cumplen ninguna de ambas quiere decir que edad es mayor a 18
+  if (edad1 < 21) { //consultamos que a pesar de ser mayor a 18, tenga menos de 21, en caso de ser verdad no puede tomar alcohol
+    console.log("Podes pasar pero no podes tomar alcohol!");
+  } else { //si no se cumple la anterior, quiere decir que tiene 21 o más
+    if (edad1 % 2 !== 0) { //verificamos que el número sea impar (si el módulo de 2 de edad nos da 0 seria par, por lo que verificamos con !== que sea distinto de 0)
+      console.log("Sabías que tu edad es impar??");
+      console.log(
+        "Podes pasar, felicidades por haber llegado a la mayoría de edad!!"
+      );
+    } else { //si entra en este else quiere decir que la edad es par, solo lo felicitamos por alcanzar la mayoría de edad (y superarla si es mayor a 21)
+      console.log("Podes pasar, felicidades por haber llegado a la mayoría de edad!!"
+      );
+    }
+  }
+}
+
+
+
 
