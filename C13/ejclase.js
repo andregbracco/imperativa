@@ -130,9 +130,4 @@ function promedioAprobacion(array, nombre, nota ) {
 //console.log(promedioAprobacion(alumno, 'Chimuelo', 8))
 
 
-let a = 2
-while (a < 5) {
-    console.log(a)
-    a += 1
-}
 

@@ -67,3 +67,4 @@ function compara(asia, euro) {
 }
 
 console.log(compara(asiaScores, euroScores))
+

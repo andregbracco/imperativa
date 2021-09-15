@@ -172,8 +172,8 @@ const inmobiliaria = {
 // A
     departamentos: departamentos,
 // B
-    listaDepartamentos: function(arrayDeptos){
-        for(let i = 0; i < arrayDeptos.length; i++){
+    listaDepartamentos: function(){
+        for(let i = 0; i < this.departamentos.length; i++){
             let disponibilidad = arrayDeptos[i].disponible ? 'disponible' : 'alquilado'
             let mascotas = arrayDeptos[i].aceptaMascotas ? 'acepta' : 'no acepta'
             console.log(
@@ -181,7 +181,6 @@ const inmobiliaria = {
             )
         }
     },
-
     
 // C
     departamentosDisponibles: function() {
@@ -246,6 +245,15 @@ const inmobiliaria = {
         
       }
     },
+    mejorAlquilar: function(id) {
+      let dptos = this.departamentosDisponibles()
+      for (let index = 0; index < dptos.length; index++) {
+        if (dptos[index].id == id) {
+          dptos[index].disponible = false    
+        }   
+      }return this.departamentos
+    },
+
     filtrarPetFriendly: function() {
       let listaAceptaPet = []
       for (let index = 0; index < this.departamentos.length; index++) {
@@ -315,4 +323,4 @@ console.log(v, oo + " G. simplificarPropietarios");
 //console.log(inmobiliaria.simplificarPropietarios())
 console.log(o);
 
-console.log(inmobiliaria.buscarPorPropietarios('Martín'))
+console.log(inmobiliaria.mejorAlquilar(1))
