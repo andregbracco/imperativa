@@ -15,7 +15,7 @@ const profesionales = [
     honorarioConsulta: 2007.68,
     edad: 29,
     nombre: "huber Wilkins",
-    email: "huberwilkins@speedbolt.com",
+    email: "huberwilkins#speedbolt.com",
     especialidad: "Neumonologia",
     cantidadConsultas: 0,
     puntaje: 8,
@@ -215,7 +215,17 @@ const appProfesionales = {
   corregirNombres: function() {
     for (let index = 0; index < this.profesionales.length; index++) {
       //let nombres = this.profesionales[index].nombre
-      this.profesionales[index].nombre = this.profesionales[index].nombre.replace(this.profesionales[index].nombre[0], this.profesionales[index].nombre[0].toUpperCase())
+      //this.profesionales[index].nombre = this.profesionales[index].nombre.replace(this.profesionales[index].nombre[0], this.profesionales[index].nombre[0].toUpperCase())
+      this.profesionales[index].nombre[0] = this.profesionales[index].nombre[0].toUpperCase()
+      
+    }return this.profesionales
+  },
+
+  corregirEmails: function() {
+    for (let index = 0; index < this.profesionales.length; index++) {
+      if (this.profesionales[index].email.includes('#')) {
+        this.profesionales[index].email = this.profesionales[index].email.replace('#', '@')
+      }
       
     }return this.profesionales
   }
@@ -228,29 +238,31 @@ console.table([{ alumno: nombre, tema: tema }]);
 
 console.log(v, "\n" + oo + "   B. listarProfesional");
 // Ejecución aquí
-appProfesionales.listarProfesionales()
+//appProfesionales.listarProfesionales()
 
 console.log(o);
 
 console.log(v, oo + "   C. filtrarMejoresPuntajes");
 // Ejecución aquí
-console.log(appProfesionales.filtrarMejoresPuntajes())
+//console.log(appProfesionales.filtrarMejoresPuntajes())
 
 console.log(o);
 
-console.log(v, oo + " D. buscarPorId(1)");
-// Ejecución aquí
-console.log(appProfesionales.buscarPorID(1))
+// console.log(v, oo + " D. buscarPorId(1)");
+// // Ejecución aquí
+// console.log(appProfesionales.buscarPorID(1))
 
-console.log(o);
+// console.log(o);
 
-console.log(v, oo + "  E. habilitarProfesional");
-// Ejecución aquí
-console.log(appProfesionales.habilitarProfesional(0))
+// console.log(v, oo + "  E. habilitarProfesional");
+// // Ejecución aquí
+// console.log(appProfesionales.habilitarProfesional(0))
 
-console.log(o);
+// console.log(o);
 
-console.log(v, oo + " F. corregirNombres");
-// Ejecución aquí
+// console.log(v, oo + " F. corregirNombres");
+// // Ejecución aquí
+// console.log(appProfesionales.corregirNombres())
+// console.log(o);
+
 console.log(appProfesionales.corregirNombres())
-console.log(o);

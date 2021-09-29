@@ -1,14 +1,10 @@
-const fs = require("fs");
-
-const jsonHelper = {
-
-    lector: function (nombreArchivo) {
-        return JSON.parse(fs.readFileSync(`${__dirname}/${nombreArchivo}.json`, "utf8"));
-    },
-
-    escritor: function (nombreArchivo, datos) {
-        fs.writeFileSync(`${__dirname}/${nombreArchivo}.json`, JSON.stringify(datos));
+let sistemaDePelisConMetodos = {
+    peliculas : pelis,
+    promedioDeDuracion: funcion(){
+        let sumatoria = this.peliculas.reduce(
+            (acum, pelicula) => 
+            acum + pelicula.duracion, 0
+        )
+        return sumatoria/this.peliculas.length;
     }
 }
-
-module.exports = jsonHelper;
